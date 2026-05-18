@@ -11,8 +11,9 @@ export default function ComparePage() {
       <FadeIn>
         <h1 className="text-3xl font-bold">Compare grades</h1>
         <p className="mt-4 max-w-2xl text-slate-300">
-          Pick any two G-materials to compare summaries, CBR, grading modulus, and
-          sieve tables side by side.
+          Pick any two G-materials to compare key limits, sieve envelopes, and operator
+          guidance side by side. Differences are highlighted — useful for G4A vs G4B,
+          G1 vs G3, or subbase vs base choices.
         </p>
       </FadeIn>
       <div className="mt-10">

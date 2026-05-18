@@ -1,4 +1,5 @@
 import type { GradeSpec } from "../types";
+import { labCrushedStone } from "./operator-lab-tests";
 
 export const g3: GradeSpec = {
   id: "g3",
@@ -30,6 +31,58 @@ export const g3: GradeSpec = {
   fracturedFaces:
     "At least 50% by mass on each fraction ≥ 5 mm shall have at least one fractured face.",
   swellMaxPercent: 0.2,
+  cbrRequirements: [
+    { compactionPercent: 100, cbrMin: 80, label: "Contract minimum for G3 (COTO)" },
+  ],
+  compaction:
+    "Mod AASHTO for CBR/swell; grading and FACT/ACV still apply. Maximum stone size is 28 mm — re-screen 37,5 mm stock if present.",
+  operatorGuide: {
+    headline:
+      "G3 is graded crushed stone with a 28 mm cap plus CBR ≥ 80% at 100% MDD and swell ≤ 0,2%. You need the G3 sieve envelope, strength tests, and compaction performance.",
+    primaryControls: [
+      "Max particle 28 mm — no 37,5 mm in the product",
+      "Full G3 grading envelope (Table A4.1.5-5)",
+      "10% FACT and ACV per rock group",
+      "CBR ≥ 80% at 100% Mod AASHTO MDD",
+      "Swell ≤ 0,2% at 100% MDD",
+      "Fractured faces and flakiness as for G2",
+      "Up to 15% approved natural fines (LL ≤ 25, PI ≤ 6)",
+    ],
+    plantSetup: [
+      "Screen out everything retained on 28 mm; recycle oversize to secondary/tertiary",
+      "Multi-stage plant with separate fines and coarse stockpiles",
+      "Target OMC from GR30 when interpreting CBR failures",
+    ],
+    labTests: [
+      ...labCrushedStone,
+      "SANS 3001-GR30 — Mod AASHTO MDD and OMC",
+      "SANS 3001-GR40 — CBR and swell at 100% MDD",
+    ],
+    compactionNote:
+      "If CBR fails at 100% MDD, check moisture against OMC before changing the crush blend.",
+    adjustments: [
+      {
+        situation: "Oversize > 28 mm in sample",
+        action:
+          "Close secondary gap or add screen; never “approve” oversize on a G3 job.",
+      },
+      {
+        situation: "CBR low, grading OK",
+        action:
+          "Moisture toward OMC; more coarse interlock; check swell and PI on fines.",
+      },
+      {
+        situation: "Swell fails",
+        action:
+          "Reduce plastic fines; check weathered or clay-rich natural fines in blend.",
+      },
+      {
+        situation: "FACT/ACV fail with good grading",
+        action:
+          "Parent rock issue — change borrow or rock type per Table A4.1.5-6.",
+      },
+    ],
+  },
   commonMistakes: [
     "Using 37.5 mm maximum aggregate when G3 specifies 28 mm",
     "Ignoring CBR at 100% MDD requirement",

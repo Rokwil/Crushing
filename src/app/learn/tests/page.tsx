@@ -72,6 +72,17 @@ export default function TestsPage() {
           </p>
         </section>
 
+        <section id="mdd-omc">
+          <h2>MDD & OMC (Mod AASHTO)</h2>
+          <p>
+            SANS 3001-GR30 gives <strong>maximum dry density (MDD)</strong> and{" "}
+            <strong>optimum moisture content (OMC)</strong>. CBR (GR40) is then run at
+            stated percentages of MDD (e.g. G4A base: ≥ 80% CBR at <strong>100%</strong>{" "}
+            MDD). If moisture in the test is far from OMC, CBR will drop even when grading
+            looks fine.
+          </p>
+        </section>
+
         <p>
           <Link href="/glossary">Full glossary →</Link> ·{" "}
           <Link href="/grades">Stone grades →</Link>

@@ -1,4 +1,5 @@
 import type { GradeSpec } from "../types";
+import { labGravelSoil } from "./operator-lab-tests";
 
 const baseSoil = {
   gradingModulus: { min: 0.75, max: 2.7 },
@@ -23,6 +24,46 @@ export const g7: GradeSpec = {
   grading: [],
   ...baseSoil,
   strength: { cbrMinAtMdd: 15, cbrMddPercent: 93 },
+  cbrRequirements: [{ compactionPercent: 93, cbrMin: 15, label: "Contract minimum for G7" }],
+  gradingControlNote:
+    "No sieve envelope — GM 0,75–2,7 and CBR at 93% MDD control acceptance. Material may need crushing or grid rolling.",
+  compaction: "Mod AASHTO; CBR tested at 93% MDD.",
+  operatorGuide: {
+    headline:
+      "G7 gravel-soil: hit GM 0,75–2,7, CBR ≥ 15% at 93% MDD, PI ≤ 3×GM + 10 (non-calcrete), swell ≤ 1,5%. Crush or grid-roll lumps as required.",
+    primaryControls: [
+      "Grading modulus 0,75–2,7",
+      "CBR ≥ 15% at 93% Mod AASHTO MDD",
+      "PI ≤ 3×GM + 10 on P0,425 (calcrete PI ≤ 20)",
+      "Swell ≤ 1,5% at 100% MDD",
+      "Max particle per layer-thickness rule (often ≤ 100 mm)",
+    ],
+    plantSetup: [
+      "Rip, crush oversize lumps, or grid roll before blending",
+      "Mix borrow zones to centre GM — avoid hauling only fines or only cobbles",
+    ],
+    labTests: labGravelSoil,
+    compactionNote:
+      "93% MDD is the standard compaction level for G7–G9 CBR — not 95% or 100%.",
+    adjustments: [
+      {
+        situation: "CBR below 15% at 93%",
+        action: "Dry back to OMC; add coarse; reduce plastic fines; compact to correct energy.",
+      },
+      {
+        situation: "GM out of range",
+        action: "Coarsen or fine blend; crush oversize that skews sieve curve.",
+      },
+      {
+        situation: "High swell",
+        action: "Remove expansive fines; change borrow; consider lime stabilisation if design allows.",
+      },
+      {
+        situation: "Uncrushed boulders in sample",
+        action: "Crush or remove oversize per layer thickness before placing.",
+      },
+    ],
+  },
   commonMistakes: [
     "Applying crushed-stone grading envelopes to G7 — GM and PI rules apply instead",
     "Not crushing oversized lumps when required",
@@ -46,6 +87,41 @@ export const g8: GradeSpec = {
   grading: [],
   ...baseSoil,
   strength: { cbrMinAtMdd: 10, cbrMddPercent: 93 },
+  cbrRequirements: [{ compactionPercent: 93, cbrMin: 10, label: "Contract minimum for G8" }],
+  gradingControlNote:
+    "GM 0,75–2,7; CBR ≥ 10% at 93% MDD. No crushed-stone grading envelope.",
+  compaction: "Mod AASHTO; CBR at 93% MDD.",
+  operatorGuide: {
+    headline:
+      "G8 is lower gravel-soil: GM 0,75–2,7 and CBR ≥ 10% at 93% MDD. Less demanding than G7 but same PI–GM relationship.",
+    primaryControls: [
+      "Grading modulus 0,75–2,7",
+      "CBR ≥ 10% at 93% Mod AASHTO MDD",
+      "PI ≤ 3×GM + 10 (non-calcrete)",
+      "Swell ≤ 1,5% at 100% MDD",
+    ],
+    plantSetup: [
+      "Blend pit run; light crushing of oversize if needed",
+      "Confirm layer is subbase/selected — not structural base",
+    ],
+    labTests: labGravelSoil,
+    compactionNote: "Always report and compare CBR at 93% MDD on the lab sheet.",
+    adjustments: [
+      {
+        situation: "CBR 7–9% at 93%",
+        action:
+          "Moisture and compaction first; then coarsen blend or reduce PI fines.",
+      },
+      {
+        situation: "GM too fine",
+        action: "Add gravel or sand fraction; re-check PI limit with new GM.",
+      },
+      {
+        situation: "Used in base layer by mistake",
+        action: "Stop — G8 is not a crushed stone base; verify pavement design.",
+      },
+    ],
+  },
   commonMistakes: ["Confusing G8 with selected fill — check layer design on drawings"],
   whyLimits: [
     "Progressively lower CBR reflects reduced structural demand",
@@ -67,6 +143,42 @@ export const g9: GradeSpec = {
   grading: [],
   ...baseSoil,
   strength: { cbrMinAtMdd: 7, cbrMddPercent: 93 },
+  cbrRequirements: [{ compactionPercent: 93, cbrMin: 7, label: "Contract minimum for G9" }],
+  gradingControlNote:
+    "Lowest standard gravel-soil: GM 0,75–2,7; CBR ≥ 7% at 93% MDD.",
+  compaction: "Mod AASHTO; CBR at 93% MDD.",
+  operatorGuide: {
+    headline:
+      "G9 is the lowest standard gravel-soil in the G-series: GM 0,75–2,7 and CBR ≥ 7% at 93% MDD — for the least demanding pavement layers only.",
+    primaryControls: [
+      "Grading modulus 0,75–2,7",
+      "CBR ≥ 7% at 93% Mod AASHTO MDD",
+      "PI ≤ 3×GM + 10; swell ≤ 1,5%",
+      "Max particle per layer-thickness rule",
+    ],
+    plantSetup: [
+      "Minimal processing — blend and compact; crush only oversize that exceeds max size",
+      "Do not use in base or high-traffic structural layers",
+    ],
+    labTests: labGravelSoil,
+    compactionNote:
+      "Low CBR target still requires proper moisture and 93% MDD compaction in the lab.",
+    adjustments: [
+      {
+        situation: "CBR just below 7%",
+        action:
+          "Small moisture or GM correction often enough — re-test before rejecting full stockpile.",
+      },
+      {
+        situation: "Material used as base",
+        action: "Reject for layer — upgrade to G5/G4 or crushed stone per design.",
+      },
+      {
+        situation: "GM fails",
+        action: "Blend coarser or finer fraction from adjacent stockpiles.",
+      },
+    ],
+  },
   commonMistakes: [
     "Using G9 in base layers — it is not a crushed stone base",
     "Ignoring maximum particle size relative to layer thickness",

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
+    "dev:turbo": "next dev",
+    "preview": "npm run build && npx --yes serve@14 out",
     "build": "next build",
     "build:pages": "cross-env NEXT_PUBLIC_BASE_PATH=/Crushing next build",
     "start": "next start",

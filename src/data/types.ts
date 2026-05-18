@@ -36,6 +36,29 @@ export interface StrengthLimits {
   notes?: string;
 }
 
+/** CBR acceptance at a stated percentage of Mod AASHTO MDD */
+export interface CbrRequirement {
+  compactionPercent: number;
+  cbrMin: number;
+  /** e.g. "Contract minimum for G4A base" */
+  label?: string;
+}
+
+export interface OperatorAdjustment {
+  situation: string;
+  action: string;
+}
+
+/** Practical quarry guidance — not a substitute for the contract spec */
+export interface OperatorGuide {
+  headline: string;
+  primaryControls: string[];
+  plantSetup: string[];
+  labTests: string[];
+  adjustments: OperatorAdjustment[];
+  compactionNote?: string;
+}
+
 export interface GradeSpec {
   id: GradeId;
   title: string;
@@ -58,6 +81,12 @@ export interface GradeSpec {
   commonMistakes: string[];
   whyLimits: string[];
   cotoRef: string;
+  /** How grading is controlled when `grading` is empty (GM-only, CBR-only, etc.) */
+  gradingControlNote?: string;
+  /** Another grade whose sieve table is a useful plant-tuning reference (not always a pass/fail) */
+  referenceGradingGradeId?: GradeId;
+  cbrRequirements?: CbrRequirement[];
+  operatorGuide?: OperatorGuide;
 }
 
 export interface RockStrengthRow {
