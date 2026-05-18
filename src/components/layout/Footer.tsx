@@ -16,6 +16,9 @@ export function Footer() {
           <Link href="/resources" className="text-amber-400 hover:underline">
             Official resources
           </Link>
+          <Link href="/classification" className="text-amber-400 hover:underline">
+            Classification
+          </Link>
           <Link href="/learn/g1-not-crusher-run" className="text-amber-400 hover:underline">
             G1 ≠ crusher-run
           </Link>

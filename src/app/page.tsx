@@ -39,12 +39,17 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
               title: "Beginner path",
               desc: "Road layers → crushing → tests → grades",
               href: "/learn",
+            },
+            {
+              title: "TRH14 & SANRAL class",
+              desc: "Field identification and G1–G10 framework",
+              href: "/classification",
             },
             {
               title: "G1 ≠ crusher-run",

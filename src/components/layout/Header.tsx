@@ -7,6 +7,7 @@ import { SearchDialog } from "@/components/search/SearchDialog";
 const nav = [
   { href: "/learn", label: "Learn" },
   { href: "/grades", label: "Grades" },
+  { href: "/classification", label: "Classification" },
   { href: "/compare", label: "Compare" },
   { href: "/glossary", label: "Glossary" },
   { href: "/coto-vs-colto", label: "COTO vs COLTO" },

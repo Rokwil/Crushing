@@ -40,6 +40,24 @@ export const glossary: GlossaryEntry[] = [
       "Committee of Land Transport Officials — predecessor specification to COTO. Still referenced on older drawings and site notes.",
   },
   {
+    term: "TRH14",
+    slug: "trh14",
+    definition:
+      "Technical Recommendations for Highways 14 (1985) — Guidelines for Road Construction Materials. Introduced the G1–G10 classification system used in South Africa.",
+  },
+  {
+    term: "DCP (Dynamic Cone Penetrometer)",
+    slug: "dcp",
+    definition:
+      "Field device measuring penetration mm/blow, correlated to in-situ CBR and TRH14 class during pavement investigations (see SAPEM Ch.6).",
+  },
+  {
+    term: "SAPEM",
+    slug: "sapem",
+    definition:
+      "South African Pavement Engineering Manual — SANRAL reference for investigation, testing, and material classification on road projects.",
+  },
+  {
     term: "Flakiness Index",
     slug: "flakiness",
     definition:

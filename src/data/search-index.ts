@@ -40,6 +40,24 @@ export const searchIndex: SearchItem[] = [
     category: "Learn",
   },
   {
+    title: "Material classification",
+    href: "/classification",
+    excerpt: "TRH14 and SANRAL field classification guides",
+    category: "Classification",
+  },
+  {
+    title: "TRH14 classification",
+    href: "/classification/trh14",
+    excerpt: "G1–G10 families, DCP correlations, grading modulus",
+    category: "Classification",
+  },
+  {
+    title: "SANRAL material classification guide",
+    href: "/classification/sanral",
+    excerpt: "Visual field identification and classification workflow",
+    category: "Classification",
+  },
+  {
     title: "All stone grades",
     href: "/grades",
     excerpt: "G1 through G9 quality ladder",

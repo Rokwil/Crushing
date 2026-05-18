@@ -21,16 +21,28 @@ const modules = [
     order: 3,
   },
   {
+    href: "/classification/sanral",
+    title: "SANRAL classification (field)",
+    desc: "Visual identification before lab testing.",
+    order: 4,
+  },
+  {
+    href: "/classification/trh14",
+    title: "TRH14 classification",
+    desc: "G1–G10 families and DCP field correlations.",
+    order: 5,
+  },
+  {
     href: "/learn/g1-not-crusher-run",
     title: "G1 is not crusher-run",
     desc: "Why density alone does not make G1.",
-    order: 4,
+    order: 6,
   },
   {
     href: "/grades",
     title: "Stone grades G1–G9",
     desc: "Full COTO limits for every G-type.",
-    order: 5,
+    order: 7,
   },
 ];
 

@@ -32,4 +32,18 @@ export const officialResources: OfficialResource[] = [
     url: "https://www.sabita.co.za/",
     source: "SABITA / industry (search TMH1)",
   },
+  {
+    title: "TRH14 — Guidelines for Road Construction Materials",
+    description:
+      "Original G1–G10 classification document (1985). Available via SAICE PDP and publishers.",
+    url: "https://saicepdp.org/resources/roads-stormwater-and-transport-guidelines-technical-recommendations-for-highways-saice-pdp",
+    source: "SAICE PDP / CSRA TRH series",
+  },
+  {
+    title: "SAPEM — South African Pavement Engineering Manual",
+    description:
+      "SANRAL pavement manual; Chapter 6 covers investigations, DCP, and TRH14 material class.",
+    url: "https://www.nra.co.za/",
+    source: "SANRAL (search SAPEM downloads)",
+  },
 ];
