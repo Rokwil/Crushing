@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f1419;
+  --foreground: #e8eaed;
+  --muted: #94a3b8;
+  --card: #1a2332;
+  --card-border: #2d3a4f;
+  --accent: #f59e0b;
+  --accent-dim: #b45309;
+  --success: #34d399;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.prose-sa h2 {
+  @apply mt-8 mb-4 text-xl font-semibold text-amber-400;
+}
+
+.prose-sa h3 {
+  @apply mt-6 mb-2 text-lg font-medium;
+}
+
+.prose-sa p {
+  @apply mb-4 leading-relaxed text-slate-300;
+}
+
+.prose-sa ul {
+  @apply mb-4 list-disc space-y-2 pl-6 text-slate-300;
+}
+
+.prose-sa a {
+  @apply text-amber-400 underline hover:text-amber-300;
+}
